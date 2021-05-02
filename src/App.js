@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import Cardlist from './components/Cardlist';
+import Searchbox from './components/Searchbox';
 
 class App extends Component {
 	constructor() {
 		super();
 		this.state = {
 			robots: [],
+			searchfield: '',
 		};
 	}
 
@@ -23,6 +25,7 @@ class App extends Component {
 		console.log(this.state);
 		return (
 			<div className='tc'>
+				<Searchbox />
 				<Cardlist robots={this.state.robots} />
 			</div>
 		);
