@@ -7,15 +7,24 @@ import { Provider } from 'react-redux';
 import {
 	createStore,
 	applyMiddleware,
+	combineReducers,
 } from 'redux';
-import { searchRobots } from './reducer';
+import {
+	searchRobots,
+	requestRobots,
+} from './reducer';
 import { createLogger } from 'redux-logger';
+import ThunkMiddleware from 'redux-thunk';
 import reportWebVitals from './reportWebVitals';
 
 const logger = createLogger();
-const store = createStore(
+const rootReducer = combineReducers({
 	searchRobots,
-	applyMiddleware(logger)
+	requestRobots,
+});
+const store = createStore(
+	rootReducer,
+	applyMiddleware(ThunkMiddleware, logger)
 );
 
 ReactDOM.render(
