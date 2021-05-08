@@ -4,11 +4,19 @@ import 'tachyons';
 import App from './App';
 import './index.css';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import {
+	createStore,
+	applyMiddleware,
+} from 'redux';
 import { searchRobots } from './reducer';
+import { createLogger } from 'redux-logger';
 import reportWebVitals from './reportWebVitals';
 
-const store = createStore(searchRobots);
+const logger = createLogger();
+const store = createStore(
+	searchRobots,
+	applyMiddleware(logger)
+);
 
 ReactDOM.render(
 	<React.StrictMode>

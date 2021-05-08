@@ -3,7 +3,7 @@ import Cardlist from './components/Cardlist';
 import Searchbox from './components/Searchbox';
 // import Scroll from './components/Scroll';
 import { setSearchFiled } from './actions';
-import { searchRobots } from './reducer';
+// import { searchRobots } from './reducer';
 import './App.css';
 
 import { connect } from 'react-redux';
@@ -68,7 +68,7 @@ class App extends Component {
 			<h1>Loading</h1>
 		) : (
 			<div className='tc'>
-				<h1 className='f1'>RoboFriends</h1>
+				<h1 className='f1'>ROBOFRIENDS</h1>
 				<Searchbox
 					searchChange={onSearchChange}
 				/>
