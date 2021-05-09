@@ -26,7 +26,7 @@ const mapDispatchToProps = (dispatch) => {
 				setSearchFiled(event.target.value)
 			),
 		onRequestRobots: () =>
-			requestRobots(dispatch),
+			dispatch(requestRobots()),
 	};
 };
 

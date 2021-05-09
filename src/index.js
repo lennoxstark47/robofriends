@@ -14,7 +14,7 @@ import {
 	requestRobots,
 } from './reducer';
 import { createLogger } from 'redux-logger';
-import ThunkMiddleware from 'redux-thunk';
+import thunk from 'redux-thunk';
 import reportWebVitals from './reportWebVitals';
 
 const logger = createLogger();
@@ -24,7 +24,7 @@ const rootReducer = combineReducers({
 });
 const store = createStore(
 	rootReducer,
-	applyMiddleware(ThunkMiddleware, logger)
+	applyMiddleware(thunk, logger)
 );
 
 ReactDOM.render(
